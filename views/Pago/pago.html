@@ -1,0 +1,133 @@
+   <div class="pagos2">
+       <br>
+       <h1>Tabla Pagos</h1>
+       <br>
+            <div class= "input-field col s6">
+                <input placeholder="Buscar Estatus" id="filtraPago" type="text" onKeyUp="getPago(1)">
+                <label for="filtrar">Buscar  Estatus ...</label> 
+              
+                <button id="revisarFecha" class="btn btn-primary">Evaluar Fecha</button>
+            </div>
+            
+            <div class="table-responsive-sm">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col" >Email</th>
+                            <th scope="col">Mes Inicio</th>
+                        <!--  <th scope="col">Apellido_materno</th>-->
+                            <th scope="col">Pago</th>
+                            <th scope="col">Precio del paquete</th>
+                            <th scope="col">Fecha anterior</th>
+                            <th scopé="col">Proxima Fecha</th>
+                            <th scope="col">Estatus</th>
+                            <th scope="col">Folio</th>
+                        </tr>
+
+                    </thead>
+                    <tbody  id="resultPago">
+                            
+                    </tbody>
+                </table>      
+            </div>
+       <div id="pie5" style="
+    margin-top: 100px;
+">
+ <!-- Modal para realiza pagos -->
+        <form   enctype="multipart/form-data" method="POST">
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal2" >
+                <div class="modal-dialog" role="document">    
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Realizar pagos</h5>
+                            <p id="userName2">Num</p>
+                        </div>
+                           <div class="form-group">                           
+                                <label class="error" for="Nombre">Nombre</label>
+                                <br>
+                                <input placeholder="Nombre" name="Nombre" id="Nombre" type="text" class="form-control-sm"  required />
+                            </div>
+                            <div class="form-group">                           
+                                <label class="error" for="Nombre">Email</label>
+                                <br>
+                                <input placeholder="Email" name="Email" id="Email" type="text" class="form-control-sm"  required />
+                            </div>
+                             <div class="form-group">                           
+                                <label class="error" for="Nombre">Folio</label>
+                                <br>
+                                <input placeholder="Folio" name="Folio" id="Folio" type="text" class="form-control-sm"  required />
+                            </div>
+                         <div class="form-group">                           
+                                <label class="error" for="Fecha_pago">Fecha a pagar</label>
+                                <br>
+                                <input placeholder="Fecha_pago" name="Fecha_pago" id="Fecha_pago" type="text" class="form-control-sm"  required />
+                             <label class="error" for="Cantidad">Su proximo pago sera: <p id="Proximafecha"></p></label>
+                             
+                         </div>
+                        <div class="form-group">                           
+                                <label class="error" for="Nombre">Folio</label>
+                                <br>
+                                <input placeholder="" name="" id="" type="text" class="form-control-sm"  required />
+                            </div>
+                        <label class="error" for="Cantidad">Cantidad a pagar incluyendo adeudos</label>
+                            <p id="cantidad">Cantidad: 0 </p>
+
+                       
+                        <label id="PagoMessagge" class="text-left Message">Unos</label>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button id="Comprobarp" class="btn btn-primary">Comprobar pago</button>
+                    </div>
+                </div>
+               </div>
+            </form>
+        </div>
+ <!-- Modal para realizar pagos-->
+ <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal2" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+       <div class= "modal-title"><h5>Historial de pagos</h5> 
+           <p id="hist">Num</p>
+            <input placeholder="Buscar Estatus" id="filtraHistorial" type="text" onKeyUp="getHiscatalogo()">
+                <label for="filtrar">Buscar  Estatus ...</label> 
+                
+                 <table class="table table-sm">
+             <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mes en que pago</th>
+                            <th scope="col">Folio</th>
+                           
+                          
+                        </tr>
+
+                    </thead>
+                      <tbody  id="resultHiscatalogo">
+                            
+                    </tbody>
+                 </table>
+       </div>
+       </div>
+     </div>
+    </div>
+  </div>
+ 
+          
+           
+           
+           
+ <div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+ 
+  </div>
+</div>
+
+</div>

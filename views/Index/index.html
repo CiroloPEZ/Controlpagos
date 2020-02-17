@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="ro">
+        <div class="col s12 m7">
+            <div class="card ">
+                <div class="card-content">
+                    <center>
+                        <h4 class="btn btn-secondary btn-lg btn-block">Iniciar sesi&oacute;n</h4>
+                    </center>
+                   <form class="login" method="post" id="validate">
+                        <div class="input-field col s12">
+                            <label for="email" class="shadow-sm p-1 mb-1 bg-white rounded">Email:</label><br>
+                            <input id="email" name="email" class="shadow-sm p-1 mb-1 bg-white rounded" type="email" required>
+                        </div>
+                        <br>
+                        <div class="input-field col s12">
+                            <label for="password" class="shadow-sm p-1 mb-1 bg-white rounded">Contraseña:</label> <br>
+                            <input class="validate shadow-sm p-1 mb-1 bg-white rounded" type="password" name="password" id="password"  minlength="6" maxlength="20" required/>
+                        </div>
+                    </form>
+                    <center>
+                        <button onclick="loginUser();" id="btnLogn" class="btn btn-dark">Iniciar sesi&oacute;n</button>
+                    </center>
+                    <br>
+                    <label id="indexMessage" class="error Message"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

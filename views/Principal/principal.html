@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pagos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <!--Contenedor para agregar-->       
+  <div class="container1">       
+            <form   enctype="multipart/form-data" method="POST">
+                <div class="card border-light mb-7" style="max-width: 60rem;">
+                    <div class="card-header"><center>Registro del cliente</center></div>
+                    <div class="form-row ">
+                        <div class="form-group col-md-12">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class=" form-control is-valid" id="Nombre" placeholder="Nombre"  required/>
+                            <label for="Apellido_paterno">Apellido_Paterno</label>
+                            <input type="text" class="form-control is-valid" id="Apellido_paterno" placeholder="Apellido_paterno"  required/>
+                            <label for="Apellido_marteno">Apellido_materno</label>
+                            <input type="text" class="form-control is-valid" id="Apellido_materno" placeholder="Apellido_materno" required/>
+                            <label for="Email">Email</label>
+                            <input type="text" class="form-control is-valid" id="Email" placeholder="Email" required/>
+                            <label for="Edad">Edad</label>
+                            <input type="text" class="form-control is-valid" id="Edad" placeholder="Edad" required/>
+                            <label for="Folio">Folio</label>
+                            <input type="text" class="form-control is_valid" id="Folio" placeholder="Folio" required/>
+                        </div>
+                    </div>
+                    <label id="clienteMessage" class="text-left Message"></label>
+                    <button id="registerCliente" class="btn btn-primary">Registrar</button>
+                </div>
+
+            </form>
+            <label id="clienteMessage" class="text-left Message"></label>
+        </div>
+
+        <div class="container2">
+            <div class= "input-field col s6">
+                <input placeholder="Buscar dia" id="filtrarCliente" type="text" onKeyUp="getCliente(1)">
+                <label for="filtrar">Buscar  Nombre ...</label> 
+               
+             
+            </div>
+            
+            <div class="table-responsive-sm">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido_paterno</th>
+                            <th scope="col">Apellido_materno</th>
+                            <th scope="col">Fecha_inicio</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Folio</th>
+                        </tr>
+
+                    </thead>
+                    <tbody  id="resultCliente">
+                            
+                    </tbody>
+                </table>      
+            </div>
+
+            <!--Cargamos el modal para editar -->
+            <form  enctype="multipart/form-data" method="POST">
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal2" >
+                    <div class="modal-dialog" role="document">  
+                        <div class="modal-content">
+                            <!-- Modal content-->
+                            <div class="form-group">                           
+                                <label class="error" for="Nombre">Nombre</label>
+                                <br>
+                                <input placeholder="Nombre" name="Nombre1" id="Nombre1" type="text" class="form-control-sm"  required />
+                            </div>
+                            <div class="form-group">
+                                <label class="error" for="Apelldio_paterno">Apellido_parteno</label>
+                                <input placeholder="Apelldio_paterno" name="Apellido_parteno2" id="Apellido_paterno2" type="text" class="form-control-sm" required />
+                            </div>                  
+                            <div class="form-group">
+                                <label class="error" for="Apelldio_materno">Apellido_marteno</label>
+                                <input placeholder="Apellido_materno" name="Apellido_materno3" id="Apellido_materno3" type="text" class="form-control-sm" required/>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="error" for="Email">Email</label>
+                                <input placeholder="Email" name="Email4" id="Email4" type="text" class="form-control-sm" required/>
+                            </div>                             
+                            <div class="form-group">
+                                <label class="error" for="Edad">Edad</label>
+                                <input placeholder="Edad" name="Edad5" id="Edad5" type="text" class="form-control-sm" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="error" for="Folio">Folio</label>
+                                <input placeholder="Folio" name ="Folio6" id="Folio6" type="text" class="form-control-sm" required/>
+                                 <input  name ="Folio6" id="Folio6" type="text" class="form-control-sm" required/>
+                            </div>
+                                <label id="clienMessage" class="text-left Message"></label>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button id="rCliente" class="btn btn-primary">Registrar</button>
+                         </div>  
+                    </div>
+                </div>
+            </form> 
+            <!--Modal para eliminar -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2" >
+                <div class="modal-dialog" role="document">    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">¿Esta seguro que quiere eliminar?</h5>
+                            <p id="userName">Num</p>
+
+                        </div>
+                        <label id="deteUserMessagge" class="text-left Message"></label>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="#!"  id="deleteCliente" class="btn btn-primary">Aceptar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal para realiza pagos -->
+             <form   enctype="multipart/form-data" method="POST">
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal2" >
+                <div class="modal-dialog" role="document">    
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Realizar pagos</h5>
+                            <p id="userName2">Num</p>
+                        </div>
+                           <div class="form-group">                           
+                                <label class="error" for="Nombre">Nombre</label>
+                                <br>
+                                <input placeholder="Nombre" name="Nombre2" id="Nombre2" type="text" class="form-control-sm"  required />
+                            </div>
+                            <div class="form-group">                           
+                                <label class="error" for="Nombre">Folio</label>
+                                <br>
+                                <input placeholder="Nombre" name="Folio2" id="Folio2" type="text" class="form-control-sm"  required />
+                            </div>
+                             <div class="form-group">                           
+                                <label class="error" for="Nombre">Folio</label>
+                                <br>
+                                <input placeholder="Nombre" name="Fo" id="Fo" type="text" class="form-control-sm"  required />
+                            </div>
+                            <p id="cantidad">Cantidad: 0 </p>
+
+                       
+                        <label id="detePagoMessagge" class="text-left Message"></label>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button id="pagos" class="btn btn-primary">Comprobar pago</button>
+                    </div>
+                </div>
+               </div>
+            </form>
+        </div>
+        <div id="pie5" style="
+    margin-top: 650px;
+">
+    
+ <div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+ 
+  </div>
+</div>
+
+</div>
+</html>
