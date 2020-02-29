@@ -7,7 +7,7 @@ constructor(){
 //link biene siendo la url actual 
 
 linkPrincipal(link){
-   
+    var li = link;
 let url = "";
         let cadena = link.split("/");
         for (let i = 0; i < cadena.length; i++){
@@ -15,7 +15,12 @@ let url = "";
                url += cadena[i];
            }
         }
-    // alert(url);
+    
+    //Funcion para ocultar el menu superior
+    if (li == "/Fecha_pago/") {
+        document.getElementById("menuNavbar1").style.visibility = "hidden";
+    }
+   
      //Este swicth se ejecuta cada vez que entramos a una url
 switch(url){ 
 
